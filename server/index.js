@@ -23,38 +23,28 @@ app.use(function(req, res, next) {
 });
 
 const postRouter = require('./routers/api/post.router')
-const socialListRouter = require('./routers/api/socialList.router')
-const docsRouter = require('./routers/api/docs.router')
 const videoRouter = require('./routers/api/video.router')
 const musicRouter = require('./routers/api/albums.router')
 const membersRouter = require('./routers/api/member.router')
-const affiliateProgramRouter = require('./routers/api/affiliateProgram.router')
-const faqRouter = require('./routers/api/faq.router')
-const settingsRouter = require('./routers/api/settings.router')
 const photosRouter = require('./routers/api/photoalbum.router')
 
 
 app
   .use('/api/news', postRouter)
-  .use('/api/socialList', socialListRouter)
-  .use('/api/docs', docsRouter)
   .use('/api/video', videoRouter)
   .use('/api/music', musicRouter)
   .use('/api/members', membersRouter)
-  .use('/api/affiliateProgram', affiliateProgramRouter)
-  .use('/api/faq', faqRouter)
-  .use('/api/settings', settingsRouter)
   .use('/api/photos', photosRouter)
 
 // Handle production
 
-if (process.env.NODE_ENV === 'production'){
-  // Static folder
-  app.use(express.static(__dirname + '/public'))
-
+// if (process.env.NODE_ENV === 'production'){
+//   Static folder
+  // app.use(express.static(__dirname + '/public'))
+  //
   // Handle SPA
-  app.get(/^(?!.*(admin|uploads))/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
-}
+  // app.get(/^(?!.*(admin|uploads))/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
+// }
 
 const run = async () => {
   try{
