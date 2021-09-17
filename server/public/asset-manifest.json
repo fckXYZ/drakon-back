@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "./static/css/main.439b4b60.chunk.css",
+    "main.js": "./static/js/main.90b2c924.chunk.js",
+    "main.js.map": "./static/js/main.90b2c924.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.dfa584f5.js",
+    "runtime-main.js.map": "./static/js/runtime-main.dfa584f5.js.map",
+    "static/css/2.4fa558fb.chunk.css": "./static/css/2.4fa558fb.chunk.css",
+    "static/js/2.7f93c8d1.chunk.js": "./static/js/2.7f93c8d1.chunk.js",
+    "static/js/2.7f93c8d1.chunk.js.map": "./static/js/2.7f93c8d1.chunk.js.map",
+    "static/js/3.7af0b45e.chunk.js": "./static/js/3.7af0b45e.chunk.js",
+    "static/js/3.7af0b45e.chunk.js.map": "./static/js/3.7af0b45e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/2.4fa558fb.chunk.css.map": "./static/css/2.4fa558fb.chunk.css.map",
+    "static/css/main.439b4b60.chunk.css.map": "./static/css/main.439b4b60.chunk.css.map",
+    "static/js/2.7f93c8d1.chunk.js.LICENSE.txt": "./static/js/2.7f93c8d1.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "./static/media/youtube-logo.1fedb39e.svg",
+    "static/media/bank-acc-icon.949bd864.svg": "./static/media/bank-acc-icon.949bd864.svg",
+    "static/media/bg-main.6c3b8465.png": "./static/media/bg-main.6c3b8465.png",
+    "static/media/comfort-icon.c1adff64.svg": "./static/media/comfort-icon.c1adff64.svg",
+    "static/media/create-acc-icon.2a09bc96.svg": "./static/media/create-acc-icon.2a09bc96.svg",
+    "static/media/en.3cc0d38b.svg": "./static/media/en.3cc0d38b.svg",
+    "static/media/es.1a25a96e.svg": "./static/media/es.1a25a96e.svg",
+    "static/media/fr.81d43a15.svg": "./static/media/fr.81d43a15.svg",
+    "static/media/in.e2afd171.svg": "./static/media/in.e2afd171.svg",
+    "static/media/minus-graph-one.74e7642d.svg": "./static/media/minus-graph-one.74e7642d.svg",
+    "static/media/p2p-icon.cf536c15.svg": "./static/media/p2p-icon.cf536c15.svg",
+    "static/media/plus-graph-one.5da298d2.svg": "./static/media/plus-graph-one.5da298d2.svg",
+    "static/media/plus-graph-two.681c56cc.svg": "./static/media/plus-graph-two.681c56cc.svg",
+    "static/media/ru.f1c2ba49.svg": "./static/media/ru.f1c2ba49.svg",
+    "static/media/safety-icon.e507d5eb.svg": "./static/media/safety-icon.e507d5eb.svg",
+    "static/media/wallet-icon.3179cd22.svg": "./static/media/wallet-icon.3179cd22.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfa584f5.js",
+    "static/css/2.4fa558fb.chunk.css",
+    "static/js/2.7f93c8d1.chunk.js",
+    "static/css/main.439b4b60.chunk.css",
+    "static/js/main.90b2c924.chunk.js"
+  ]
+}

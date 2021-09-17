@@ -1,0 +1,8 @@
+{
+  "short_name": "P2P",
+  "name": "P2P",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
