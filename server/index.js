@@ -48,7 +48,7 @@ app
 
 const run = async () => {
   try{
-    await mongoose.connect(process.env.MONGO_DB_ADDRESS, {
+    await mongoose.connect('mongodb://localhost:27017/drakon-db', {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
