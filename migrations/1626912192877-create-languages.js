@@ -18,7 +18,7 @@ const langs = [
 console.log(process.env)
 
 module.exports.up = function (next) {
-  mongoose.connect(dbAddress, {
+  mongoose.connect('mongodb://localhost:27017/drakon-db', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
