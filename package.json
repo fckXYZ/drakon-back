@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
     "dev": "nodemon server/index.js",
     "migrate-dev": "NODE_ENV=development migrate",
     "migrate-prod": "NODE_ENV=production migrate"
