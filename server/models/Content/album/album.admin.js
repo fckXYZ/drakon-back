@@ -3,6 +3,14 @@ const Album = require('./album.model');
 const uploadFeature = require('@admin-bro/upload')
 const path = require("path");
 
+const validationTracks = {
+	mimeTypes: ['audio/mpeg'],
+}
+
+const validationCover = {
+	mimeTypes: ['image/jpeg', 'image/png'],
+}
+
 const {
 	after: uploadAfterHook,
 } = require('../../actions/upload-album.hook')
@@ -64,7 +72,8 @@ module.exports = {
 				key: 'tracks.key',
 				mimeType: 'tracks.mimeType',
 				bucket: 'tracks.bucket',
-			}
+			},
+			validationTracks,
 		}),
 		uploadFeature({
 			provider: { local: { bucket: path.join(__dirname + '../../../../../uploads') }},
@@ -76,7 +85,8 @@ module.exports = {
 				key: 'cover.key',
 				mimeType: 'cover.mimeType',
 				bucket: 'cover.bucket',
-			}
+			},
+			validationCover
 		}),
 	],
 	resource: Album,

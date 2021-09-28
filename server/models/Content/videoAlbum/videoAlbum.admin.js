@@ -3,6 +3,10 @@ const VideoAlbum = require('./videoAlbum.model');
 const uploadFeature = require('@admin-bro/upload')
 const path = require("path");
 
+const validation = {
+  mimeTypes: ['image/jpeg', 'image/png'],
+}
+
 const options = {
   parent: {
     name: 'Content',
@@ -43,7 +47,8 @@ module.exports = {
         filesToDelete: `photos.filesToDelete`,
         key: `photos.key`,
         mimeType: `photos.mime`,
-      }
+      },
+      validation
     })
   ],
   resource: VideoAlbum,
