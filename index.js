@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 require('dotenv').config()
 
-const config = require('./config');
+const config = require('./server/config');
 
 const { default: AdminBro } = require('admin-bro')
-const adminBroOptions = require('./routers/admin.options')
-const buildAdminRouter = require('./routers/admin.router')
+const adminBroOptions = require('./server/routers/admin.options')
+const buildAdminRouter = require('./server/routers/admin.router')
 
 const app = express()
 
@@ -22,12 +22,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-const postRouter = require('./routers/api/post.router')
-const videoRouter = require('./routers/api/video.router')
-const musicRouter = require('./routers/api/albums.router')
-const membersRouter = require('./routers/api/member.router')
-const photosRouter = require('./routers/api/photoalbum.router')
-const {CORS_ADDR} = require("./config");
+const postRouter = require('./server/routers/api/post.router')
+const videoRouter = require('./server/routers/api/video.router')
+const musicRouter = require('./server/routers/api/albums.router')
+const membersRouter = require('./server/routers/api/member.router')
+const photosRouter = require('./server/routers/api/photoalbum.router')
+const {CORS_ADDR} = require("./server/config");
 
 
 app
