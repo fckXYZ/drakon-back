@@ -9,6 +9,7 @@ const Language = require('../models/Content/language/language.admin')
 const PhotoAlbum = require('../models/Content/photoAlbum/photoAlbum.admin')
 const VideoAlbum = require('../models/Content/videoAlbum/videoAlbum.admin')
 const Album = require('../models/Content/album/album.admin')
+const About = require('../models/Content/about/about.admin')
 
 /**@type {import ('admin-bro').AdminBroOptions} */
 const options = {
@@ -18,7 +19,8 @@ const options = {
 		Language,
 		PhotoAlbum,
 		VideoAlbum,
-		Album
+		Album,
+		About
 	],
 	branding: {
 		companyName: 'Drakon Admin Panel',
@@ -31,7 +33,8 @@ const options = {
 				Post: 'Новости',
                 photoAlbum: 'Фотоальбом',
                 videoAlbum: 'Видеоальбомы',
-                album: 'Музыка'
+                album: 'Музыка',
+                about: 'О группе',
 			}
 		}
 	},

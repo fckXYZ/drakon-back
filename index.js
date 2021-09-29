@@ -27,8 +27,7 @@ const videoRouter = require('./server/routers/api/video.router')
 const musicRouter = require('./server/routers/api/albums.router')
 const membersRouter = require('./server/routers/api/member.router')
 const photosRouter = require('./server/routers/api/photoalbum.router')
-const {CORS_ADDR} = require("./server/config");
-
+const aboutRouter = require('./server/routers/api/about.router')
 
 app
   .use('/api/news', postRouter)
@@ -36,6 +35,7 @@ app
   .use('/api/music', musicRouter)
   .use('/api/members', membersRouter)
   .use('/api/photos', photosRouter)
+  .use('/api/about', aboutRouter)
 
 // Handle production
 
