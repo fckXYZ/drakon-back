@@ -21,7 +21,7 @@ const MemberSchema = new Schema({
   },
   birthday: {
     type: Date,
-    default: Date.now
+    default: '',
   }
 })
 

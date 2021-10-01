@@ -43,6 +43,10 @@ const options = {
         edit: true,
         filter: false,
         list: true
+      },
+      custom: {
+        title: 'Фото к новости',
+        text: 'Поддерживаемые форматы: PNG, JPG/JPEG. Максимальный размер файла - 10mb',
       }
     },
     file: {

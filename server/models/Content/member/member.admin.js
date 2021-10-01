@@ -15,6 +15,20 @@ const options = {
     _id: {
       isVisible: false
     },
+    birthday: {
+      components: {
+        edit: AdminBro.bundle('../../components/datepicker.edit.jsx')
+      },
+      isVisible: {
+        show: false,
+        edit: true,
+        filter: false,
+        list: true
+      },
+      custom: {
+        text: 'Для создания участника без даты рождения оставить пустую строку'
+      }
+    },
     uploadFile: {
       components: {
         edit: AdminBro.bundle('../../components/upload-file.edit.tsx'),
@@ -25,6 +39,10 @@ const options = {
         edit: true,
         filter: false,
         list: true
+      },
+      custom: {
+        title: 'Фото участника',
+        text: 'Поддерживаемые форматы: PNG, JPG/JPEG. Максимальный размер файла - 10mb',
       }
     },
     file: {

@@ -9,7 +9,6 @@ const after = async (response, request, context) => {
 		return response
 	}
 	try {
-		console.log(context)
 		const { record } = context;
 		const abUpload = context['admin-bro-upload'];
 		const { tracks } = abUpload;

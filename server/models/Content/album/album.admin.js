@@ -4,7 +4,7 @@ const uploadFeature = require('@admin-bro/upload')
 const path = require("path");
 
 const validationTracks = {
-	mimeTypes: ['audio/mpeg'],
+	mimeTypes: ['audio/mpeg', 'audio/x-wav', 'audio/x-ms-wma'],
 }
 
 const validationCover = {
@@ -45,6 +45,38 @@ const options = {
 				edit: true,
 				filter: false,
 				list: false
+			}
+		},
+		photosReqs: {
+			components: {
+				edit: AdminBro.bundle('../../components/text-reqs.jsx'),
+				show: AdminBro.bundle('../../components/text-reqs.jsx'),
+			},
+			isVisible: {
+				show: false,
+				edit: true,
+				filter: false,
+				list: false,
+			},
+			custom: {
+				title: 'Требования к обложке.',
+				text: 'Формат: PNG, JPG/JPEG. Для лучшего отображения использовать квадратное изображение. Максимальный размер файла - 10mb'
+			}
+		},
+		tracksReqs: {
+			components: {
+				edit: AdminBro.bundle('../../components/text-reqs.jsx'),
+				show: AdminBro.bundle('../../components/text-reqs.jsx'),
+			},
+			isVisible: {
+				show: false,
+				edit: true,
+				filter: false,
+				list: false,
+			},
+			custom: {
+				title: 'Требования к загружвемым аудио.',
+				text: 'Формат: MP3, WAV, WMA. Максимальный размер файла - 10mb'
 			}
 		},
 	},

@@ -4,9 +4,9 @@ import { Box, Text } from '@admin-bro/design-system'
 const Reqs = (props) => {
     const { property } = props
     return (
-        <Box>
-            <span>Требования к ссылке на видео</span>
-            <Text>
+        <Box marginBottom="25px">
+            <span>{property.custom.title ? property.custom.title : property.label}</span>
+            <Text fontSize="10px">
                 {property.custom.text}
             </Text>
         </Box>

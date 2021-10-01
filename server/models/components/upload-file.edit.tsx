@@ -7,25 +7,20 @@ const Edit: React.FC<BasePropertyProps> = (props) => {
   try {
     const {property, record, onChange} = props
     const { custom } = property;
-    console.log(props)
 
     const handleDropZoneChange = (files) => {
-      console.log(files)
       onChange(property.name, files[0])
-      console.log(files[0])
     }
     return (
       <Box pb="x3">
-        <Label>{property.label}</Label>
+        <Label>{Object.keys(custom).length ?
+            custom.title ? custom.title : property.label : property.label}</Label>
         {
           Object.keys(custom).length ?
-              Object.keys(custom).map((key) => (
                   <p
-                      key={`subtitle-${key}`}
-                      style={{ marginBottom: '15px' }}
-                  >{custom[key]}</p>)
-              ):
-              null
+                      style={{ marginBottom: '10px', fontSize: '10px' }}
+                  >{custom.text}</p>
+            : null
         }
         <DropZone
           multiple

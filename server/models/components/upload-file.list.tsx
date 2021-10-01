@@ -7,7 +7,6 @@ const Edit: React.FC<BasePropertyProps> = (props) => {
   const { record } = props
 
   const fileSrc = record.params['file']
-  console.log(fileSrc)
   return (
     <Box>
       {fileSrc ? (

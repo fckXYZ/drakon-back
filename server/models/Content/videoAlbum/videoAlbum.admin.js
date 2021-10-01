@@ -16,21 +16,58 @@ const options = {
       isVisible: false,
     },
     photos: {
-      isVisible: false,
+      components: {
+        list: AdminBro.bundle('../../components/photos-preview.list.jsx'),
+        show: AdminBro.bundle('../../components/photos-preview.list.jsx'),
+      },
+      isVisible: {
+        show: true,
+        edit: false,
+        filter: false,
+        list: false
+      },
+      custom: {
+        propName: 'photos',
+      }
     },
-    requirements: {
+    file: {
+      isVisible: {
+        show: false,
+        list: false,
+        edit: true,
+        filter: false
+      }
+    },
+    videoReqs: {
       components: {
         edit: AdminBro.bundle('../../components/text-reqs.jsx'),
         show: AdminBro.bundle('../../components/text-reqs.jsx'),
       },
       isVisible: {
-        show: true,
+        show: false,
         edit: true,
         filter: false,
-        list: true,
+        list: false,
       },
       custom: {
+        title: 'Требования к ссылке на видео',
         text: 'Чтобы видео работало, ссылка должна быть вида https://youtube.com/embed/kMZLPOgVkZM. Внимание на youtube.com ! И на /embed/ !'
+      }
+    },
+    photosReqs: {
+      components: {
+        edit: AdminBro.bundle('../../components/text-reqs.jsx'),
+        show: AdminBro.bundle('../../components/text-reqs.jsx'),
+      },
+      isVisible: {
+        show: false,
+        edit: true,
+        filter: false,
+        list: false,
+      },
+      custom: {
+        title: 'Требования загружвемым фото',
+        text: 'Формат: PNG, JPG/JPEG. Для лучшего отображения, ориентация фото - альбомная. Максимальное количество фото - 6.'
       }
     },
   },

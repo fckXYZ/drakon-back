@@ -16,8 +16,44 @@ const options = {
       isVisible: false,
     },
     photos: {
-      isVisible: false,
-    }
+      components: {
+        list: AdminBro.bundle('../../components/photos-preview.list.jsx'),
+        show: AdminBro.bundle('../../components/photos-preview.list.jsx'),
+      },
+      isVisible: {
+        show: true,
+        edit: false,
+        filter: false,
+        list: true
+      },
+      custom: {
+        propName: 'photos',
+      }
+    },
+    file: {
+      isVisible: {
+        edit: true,
+        show: false,
+        list: false,
+        filter: false
+      }
+    },
+    photosReqs: {
+      components: {
+        edit: AdminBro.bundle('../../components/text-reqs.jsx'),
+        show: AdminBro.bundle('../../components/text-reqs.jsx'),
+      },
+      isVisible: {
+        show: false,
+        edit: true,
+        filter: false,
+        list: false,
+      },
+      custom: {
+        title: 'Требования загружвемым фото',
+        text: 'Формат: PNG, JPG/JPEG. Максимальный размер файла - 10mb'
+      }
+    },
   },
 };
 
@@ -33,7 +69,7 @@ module.exports = {
         filesToDelete: `photos.filesToDelete`,
         key: `photos.key`,
         mimeType: `photos.mime`,
-      }
+      },
     })
   ],
   resource: PhotoAlbum,

@@ -2,15 +2,20 @@
 import React from 'react'
 import { Box, Label, DatePicker } from '@admin-bro/design-system'
 
-const Edit = (props) => {
+const Datepicker = (props) => {
 	const [value, setValue] = React.useState(new Date())
-	const {property} = props
+	const {property, record} = props;
+	const { custom } = property
 	return (
 		<Box pb="x3">
-			<Label>{property.label}</Label>
+			<Label>День рождения</Label>
+			<p style={{ marginBottom: '10px', fontSize: '10px' }}>{custom ? custom.text : ''}</p>
 			<DatePicker
 				value={value}
-				onChange={ (date) => setValue(date) }
+				onChange={ (date) => {
+					setValue(date)
+					record.params.birthday = date;
+				} }
 				showYearDropdown
 				scrollableYearDropdown
 				yearDropdownItemNumber={30}
@@ -22,4 +27,4 @@ const Edit = (props) => {
 	)
 }
 
-export default Edit;
+export default Datepicker;

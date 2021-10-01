@@ -12,7 +12,6 @@ const Edit: React.FC<BasePropertyProps> = (props) => {
             tracksForRender.push(record.params[param])
         }
     })
-    console.log(tracksForRender)
     const tracks = tracksForRender
     return (
         <Box>
