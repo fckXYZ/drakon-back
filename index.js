@@ -14,6 +14,7 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(cors())
+console.log(config.CORS_ADDR)
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', config.CORS_ADDR);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
