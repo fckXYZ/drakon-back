@@ -23,20 +23,49 @@ const options = {
 		_id: {
 			isVisible: false,
 		},
-		trackList: {
+		coverFile: {
+			isVisible: {
+				list: false,
+				show: false,
+				edit: true,
+				filter: false
+			},
+			position: 2,
+		},
+		cover: {
 			components: {
-				edit: AdminBro.bundle('../../components/album-tracks.list.tsx'),
-				list: AdminBro.bundle('../../components/album-tracks.list.tsx'),
+				list: AdminBro.bundle('../../components/album-preview.list.jsx'),
+				show: AdminBro.bundle('../../components/album-preview.list.jsx'),
 			},
 			isVisible: {
 				show: true,
-				edit: true,
+				edit: false,
 				filter: false,
 				list: true
 			},
+			position: 2,
 		},
-		cover: {
-			isVisible: false,
+		tracklist: {
+			components: {
+				list: AdminBro.bundle('../../components/tracklist.list.jsx'),
+				show: AdminBro.bundle('../../components/tracklist.list.jsx'),
+			},
+			isVisible: {
+				show: true,
+				edit: false,
+				filter: false,
+				list: true
+			},
+			position: 3,
+		},
+		tracks: {
+			isVisible: {
+				list: false,
+				show: false,
+				edit: true,
+				filter: false
+			},
+			position: 4,
 		},
 		description: {
 			type: 'richtext',
@@ -61,7 +90,8 @@ const options = {
 			custom: {
 				title: 'Требования к обложке.',
 				text: 'Формат: PNG, JPG/JPEG. Для лучшего отображения использовать квадратное изображение. Максимальный размер файла - 10mb'
-			}
+			},
+			position: 3,
 		},
 		tracksReqs: {
 			components: {
@@ -77,7 +107,8 @@ const options = {
 			custom: {
 				title: 'Требования к загружвемым аудио.',
 				text: 'Формат: MP3, WAV, WMA. Максимальный размер файла - 10mb'
-			}
+			},
+			position: 5,
 		},
 	},
 	actions: {
