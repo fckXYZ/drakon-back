@@ -3,8 +3,6 @@ const getMP3Duration = require('get-mp3-duration')
 const Album = require('../../models/Content/album/album.model')
 const fs = require("fs");
 
-
-
 const router = new Router()
 
 // Get video albums
