@@ -7,7 +7,7 @@ const {
 const rateLimit = require('express-rate-limit');
 const path = require("path");
 
-const url = 'https://test-drakon-api.xyz';
+const url = 'https://drakon.band';
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
