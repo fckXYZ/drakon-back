@@ -29,6 +29,7 @@ const musicRouter = require('./server/routers/api/albums.router')
 const membersRouter = require('./server/routers/api/member.router')
 const photosRouter = require('./server/routers/api/photoalbum.router')
 const aboutRouter = require('./server/routers/api/about.router')
+const mailRouter = require('./server/routers/api/mail.router')
 
 app
   .use('/api/news', postRouter)
@@ -37,6 +38,7 @@ app
   .use('/api/members', membersRouter)
   .use('/api/photos', photosRouter)
   .use('/api/about', aboutRouter)
+  .use('/api/feedback', mailRouter)
 
 // Handle production
 
