@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 		albumsForRes.push({
 			title: album.title,
 			_id: album._id,
-			tracks: album.tracks,
-			cover: `/uploads/${album._id}/${album.cover.filename}`,
+			tracks: album.tracksForFront,
+			cover: `/uploads/${album.cover.key}`,
 			description: album.description,
 		})
 	})

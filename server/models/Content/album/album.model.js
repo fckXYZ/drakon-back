@@ -1,19 +1,11 @@
 const mongoose = require('mongoose');
 
-const UploadedFile = new mongoose.Schema({
-	name: String,
-	path: String,
-	type: String,
-	size: Number,
-	folder: String,
-	filename: String
-})
-
 const albumSchema = new mongoose.Schema({
 	title: String,
-	cover: UploadedFile,
+	cover: JSON,
 	description: String,
 	tracks: JSON,
+	tracksForFront: JSON,
 });
 
 module.exports = mongoose.model('album', albumSchema);

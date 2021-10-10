@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
 			"Messages":[
 				{
 					"From": {
-						"Email": 'info@drakon.band',
+						"Email": 'drakon.band@yandex.ru',
 						"Name": name
 					},
 					"To": [

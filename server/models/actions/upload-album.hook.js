@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const AdminBro = require('admin-bro');
-const getMP3Duration = require('get-mp3-duration')
 const mm = require('music-metadata');
+const Album = require('../../models/Content/album/album.model')
+
 
 const removeTrackTag = (trackName) => {
 	if (trackName.includes('.mp3')) {
@@ -25,8 +26,24 @@ const after = async (response, request, context) => {
 	try {
 		const { record } = context;
 		const abUpload = context['admin-bro-upload'];
-		const { tracks } = abUpload;
+		const tracks = abUpload.uploadTracks;
+		const tracksToDelete = abUpload['tracks.filesToDelete']
 		const tracksForRec = []
+
+		if (tracksToDelete) {
+			// if there are tracks to delete from adminbro/upload
+			// need to sync tracksForFront array in record with tracks array
+			const albumToModify = await Album.find({ _id: record.params._id })
+			const { tracksForFront } = albumToModify[0];
+			tracksToDelete.map((index) => {
+				tracksForFront.splice(index, 1);
+			})
+			await record.update({ tracksForFront })
+		}
+
+		if (!tracks) {
+			return response
+		}
 
 		const formTrackForArray = async(track) => {
 			const buffer = fs.readFileSync(`uploads/${record.params._id}/${track.name}`);
@@ -46,7 +63,7 @@ const after = async (response, request, context) => {
 
 		return formArrayOfTracks()
 			.then(async () => {
-				await record.update({ tracks: tracksForRec })
+				await record.update({ tracksForFront: tracksForRec })
 
 				return response
 			})
