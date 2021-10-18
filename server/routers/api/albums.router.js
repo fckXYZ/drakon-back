@@ -21,4 +21,9 @@ router.get('/', async (req, res) => {
 	res.send(albumsForRes);
 })
 
+router.post('/edit-track', async (req, res) => {
+	console.log(req)
+	const { albumId, name } = req.body;
+})
+
 module.exports = router;

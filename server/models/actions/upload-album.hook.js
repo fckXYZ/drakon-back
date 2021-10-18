@@ -28,12 +28,14 @@ const after = async (response, request, context) => {
 		const abUpload = context['admin-bro-upload'];
 		const tracks = abUpload.uploadTracks;
 		const tracksToDelete = abUpload['tracks.filesToDelete']
-		const tracksForRec = []
 
+		const albumToModify = await Album.find({ _id: record.params._id });
+		const tracksForRec = albumToModify[0].tracksForFront ? albumToModify[0].tracksForFront : [];
+
+		//deleting tracks if needed
 		if (tracksToDelete) {
 			// if there are tracks to delete from adminbro/upload
 			// need to sync tracksForFront array in record with tracks array
-			const albumToModify = await Album.find({ _id: record.params._id })
 			const { tracksForFront } = albumToModify[0];
 			tracksToDelete.map((index) => {
 				tracksForFront.splice(index, 1);
@@ -41,10 +43,26 @@ const after = async (response, request, context) => {
 			await record.update({ tracksForFront })
 		}
 
+		//checking if there are any tracks to ename in payload
+		const { payload } = request
+		Object.keys(payload).map(async (key) => {
+			if (key.includes('tracksToRename.')) {
+				const tracNameOriginal = key.slice(key.indexOf('.') + 1);
+				tracksForRec.map(async (trackData) => {
+					if (trackData.name === tracNameOriginal) {
+						trackData.name = payload[key] // updating track name from the payload
+						await record.update({ tracksForFront: tracksForRec })
+					}
+				})
+			}
+		})
+
+		// if no new tracks, return
 		if (!tracks) {
 			return response
 		}
 
+		//adding new tracks for front
 		const formTrackForArray = async(track) => {
 			const buffer = fs.readFileSync(`uploads/${record.params._id}/${track.name}`);
 
@@ -70,19 +88,6 @@ const after = async (response, request, context) => {
 			.catch((err) => {
 				console.log(err)
 			})
-
-		// await tracks.map(async (track) => {
-		// 	const buffer = fs.readFileSync(`uploads/${record.params._id}/${track.name}`);
-		//
-		// 	const metadata = await mm.parseBuffer(buffer);
-		//
-		// 	tracksForRec.push({
-		// 		name: track.name,
-		// 		url: `/uploads/${record.params._id}/${track.name}`,
-		// 		length: metadata.format.duration,
-		// 	})
-		// })
-
 
 	} catch (error) {
 		console.log(error)

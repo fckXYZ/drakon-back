@@ -45,15 +45,17 @@ import Component22 from '../server/models/components/text-reqs'
 AdminBro.UserComponents.Component22 = Component22
 import Component23 from '../server/models/components/text-reqs'
 AdminBro.UserComponents.Component23 = Component23
-import Component24 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/edit'
+import Component24 from '../server/models/components/tracklist.list'
 AdminBro.UserComponents.Component24 = Component24
-import Component25 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/list'
+import Component25 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/edit'
 AdminBro.UserComponents.Component25 = Component25
-import Component26 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/show'
+import Component26 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/list'
 AdminBro.UserComponents.Component26 = Component26
-import Component27 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/edit'
+import Component27 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/show'
 AdminBro.UserComponents.Component27 = Component27
-import Component28 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/list'
+import Component28 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/edit'
 AdminBro.UserComponents.Component28 = Component28
-import Component29 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/show'
+import Component29 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/list'
 AdminBro.UserComponents.Component29 = Component29
+import Component30 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/show'
+AdminBro.UserComponents.Component30 = Component30

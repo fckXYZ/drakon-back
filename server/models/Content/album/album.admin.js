@@ -111,26 +111,13 @@ const options = {
 		uploadTracks: {
 			position: 6,
 		},
-		// editTracksReqs: {
-		// 	components: {
-		// 		edit: AdminBro.bundle('../../components/text-reqs.jsx'),
-		// 	},
-		// 	isVisible: {
-		// 		show: false,
-		// 		edit: true,
-		// 		filter: false,
-		// 		list: false,
-		// 	},
-		// 	custom: {
-		// 		title: 'Редактирование параметров загруженных треков',
-		// 		text: 'Желательно не трогать ничего, кроме поля Name. Если случайно изменить Url, файл перестанет отображаться на сайте. В таком случае необходимо удалить "сломанный" трек выше(под полем для загрузки), сохранить документ, и затем залить трек заново.'
-		// 	},
-		// 	position: 7,
-		// },
 		tracksForFront: {
+			components: {
+				edit: AdminBro.bundle('../../components/tracklist.list.jsx'),
+			},
 			isVisible: {
 				show: false,
-				edit: false,
+				edit: true,
 				list: false,
 				filter: false,
 			},
