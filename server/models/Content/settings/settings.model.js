@@ -9,10 +9,6 @@ const SettingsSchema = new Schema({
 		type: Boolean,
 		default: true,
 	},
-	photosVisible: {
-		type: Boolean,
-		default: true
-	},
 })
 
 const Settings = model('Settings', SettingsSchema)

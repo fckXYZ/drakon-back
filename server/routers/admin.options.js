@@ -4,7 +4,6 @@ const AdminBroMongoose = require('@admin-bro/mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
 const AdminPost = require('../models/Content/post/post.admin')
-const Member = require('../models/Content/member/member.admin')
 const Language = require('../models/Content/language/language.admin')
 const PhotoAlbum = require('../models/Content/photoAlbum/photoAlbum.admin')
 const VideoAlbum = require('../models/Content/videoAlbum/videoAlbum.admin')
@@ -16,7 +15,6 @@ const Settings = require('../models/Content/settings/settings.admin')
 const options = {
 	resources: [
 		AdminPost,
-		Member,
 		Language,
 		PhotoAlbum,
 		VideoAlbum,
@@ -30,7 +28,6 @@ const options = {
 	locale: {
 		translations: {
 			labels: {
-				Member: 'Участники группы',
 				Language: 'Языки',
 				Post: 'Новости',
                 photoAlbum: 'Фотоальбом',
