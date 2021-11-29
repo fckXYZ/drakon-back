@@ -9,7 +9,16 @@ const options = {
 		_id: {
 			isVisible: false,
 		},
-		about: {
+		main_page: {
+			type: 'richtext',
+			isVisible: {
+				show: true,
+				edit: true,
+				filter: false,
+				list: false
+			},
+		},
+		about_page: {
 			type: 'richtext',
 			isVisible: {
 				show: true,

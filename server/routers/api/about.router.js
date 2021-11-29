@@ -18,7 +18,7 @@ const languageID = async (req) => {
 router.get('/:lang', async (req, res) => {
 	const about = await About.find({
 		language: await languageID(req),
-	});
+	}).select(['-_id', '-language', '-__v']);
 	res.send(about[0]);
 })
 

@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const {Schema} = require("mongoose");
 
 const aboutSchema = new mongoose.Schema({
-	about: {
+	main_page: {
+		type: String,
+	},
+	about_page: {
 		type: String,
 	},
 	language: {
