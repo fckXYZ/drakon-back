@@ -29,13 +29,15 @@ const after = async (response, request, context) => {
 		const tracks = abUpload.uploadTracks;
 		const tracksToDelete = abUpload['tracks.filesToDelete']
 
-		const albumToModify = await Album.find({ _id: record.params._id });
+		// const albumToModify = await Album.find({ _id: record.params._id });
+		const albumToModify = await record.resource.MongooseModel.find({ _id: record.params._id });
 		const tracksForRec = albumToModify[0].tracksForFront ? albumToModify[0].tracksForFront : [];
 
 		//deleting tracks if needed
 		if (tracksToDelete) {
 			// if there are tracks to delete from adminbro/upload
 			// need to sync tracksForFront array in record with tracks array
+			console.log('here')
 			const { tracksForFront } = albumToModify[0];
 			tracksToDelete.map((index) => {
 				tracksForFront.splice(index, 1);
@@ -43,7 +45,7 @@ const after = async (response, request, context) => {
 			await record.update({ tracksForFront })
 		}
 
-		//checking if there are any tracks to ename in payload
+		//checking if there are any tracks to rename in payload
 		const { payload } = request
 		Object.keys(payload).map(async (key) => {
 			if (key.includes('tracksToRename.')) {

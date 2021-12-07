@@ -39,3 +39,11 @@ import Component19 from '../node_modules/@admin-bro/upload/src/features/upload-f
 AdminBro.UserComponents.Component19 = Component19
 import Component20 from '../node_modules/@admin-bro/upload/src/features/upload-file/components/show'
 AdminBro.UserComponents.Component20 = Component20
+import Component21 from '../server/models/components/upload-file.edit'
+AdminBro.UserComponents.Component21 = Component21
+import Component22 from '../server/models/components/upload-file.list'
+AdminBro.UserComponents.Component22 = Component22
+import Component23 from '../server/models/components/text-reqs'
+AdminBro.UserComponents.Component23 = Component23
+import Component24 from '../server/models/components/text-reqs'
+AdminBro.UserComponents.Component24 = Component24

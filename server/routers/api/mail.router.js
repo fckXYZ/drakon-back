@@ -6,7 +6,7 @@ const router = new Router()
 
 // Send E-Mail
 router.post('/', async (req, res) => {
-	const { name, phone, email, text } = req.body;
+	const { email } = req.body;
 	const request = mailjet
 		.post("send", {'version': 'v3.1'})
 		.request({
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 						}
 					],
 					"Subject": "Feedback",
-					"HTMLPart": `<h3>E-Mail: ${email}</h3><br /><h4>Телефон: ${phone}</h4><br /><h4>Имя: ${name}</h4><br /><p><b>Текст отзыва:</b><br />${text}</p>`,
+					"HTMLPart": `<h2>Подписка:</h2></h2><h3>E-Mail: ${email}</h3>`,
 				}
 			]
 		})

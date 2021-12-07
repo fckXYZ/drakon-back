@@ -25,7 +25,7 @@ const options = {
       }
     },
     preview: {
-      type: 'richtext',
+      type: 'textarea',
       isVisible: {
         show: true,
         edit: true,

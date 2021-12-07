@@ -5,6 +5,7 @@ const aboutSchema = new mongoose.Schema({
 	main_page: {
 		type: String,
 	},
+	video: String,
 	about_page: {
 		type: String,
 	},
