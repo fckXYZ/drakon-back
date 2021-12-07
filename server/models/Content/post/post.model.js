@@ -16,7 +16,7 @@ const PostSchema = new Schema({
   },
   preview: {
     type: String,
-    required: false
+    required: true
   },
   file: {
     type: String,
