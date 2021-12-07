@@ -22,7 +22,7 @@ module.exports.up = function (next) {
   }).then(() => {
       Language.find({})
           .then((data) => {
-              if (!data.length) {
+              if (data.length) {
                   return next()
               }
               Language.insertMany(langs)
