@@ -45,7 +45,7 @@ const options = {
                 mainPageMusic: 'Треки для главной страницы',
                 about: 'О группе',
 				settings: 'Настройки',
-				DiscographyText: 'Текст в раздел с дискографией',
+				discographyText: 'Текст в раздел с дискографией',
 				BottomDocs: 'Польз. соглашение и политика конф.',
 			}
 		}
