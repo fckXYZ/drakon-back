@@ -15,20 +15,24 @@ const langs = [
   },
 ]
 
-console.log(process.env)
-
 module.exports.up = function (next) {
   mongoose.connect(config.MONGO_DB_ADDRESS, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
-    Language.insertMany(langs)
-        .then((res) => {
-          next()
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      Language.find({})
+          .then((data) => {
+              if (!data.length) {
+                  return next()
+              }
+              Language.insertMany(langs)
+                  .then((res) => {
+                      next()
+                  })
+                  .catch((err) => {
+                      console.log(err)
+                  })
+          })
   })
       .catch((err) => {
         console.log(err)
