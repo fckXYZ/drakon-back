@@ -4,7 +4,7 @@ const { Contacts } = require('./contacts.model')
 /**@type {AdminBro.ResourceOptions} */
 const options = {
 	parent: {
-		name: 'Settings',
+		name: 'Настройки',
 	},
 	properties: {
 		_id: {

@@ -13,6 +13,7 @@ const About = require('../models/Content/about/about.admin')
 const Settings = require('../models/Content/settings/settings.admin')
 const Contacts = require('../models/Content/contacts/contacts.admin')
 const DiscographyText = require('../models/Content/discographyText/discographyText.admin')
+const BottomDocs = require('../models/Footer/UAandPP/bottomDocs.admin')
 
 /**@type {import ('admin-bro').AdminBroOptions} */
 const options = {
@@ -27,6 +28,7 @@ const options = {
 		Settings,
 		Contacts,
 		DiscographyText,
+		BottomDocs
 	],
 	branding: {
 		companyName: 'Drakon Admin Panel',
@@ -43,7 +45,8 @@ const options = {
                 mainPageMusic: 'Треки для главной страницы',
                 about: 'О группе',
 				settings: 'Настройки',
-				DiscographyText: 'Текст в раздел с дискографией'
+				DiscographyText: 'Текст в раздел с дискографией',
+				BottomDocs: 'Польз. соглашение и политика конф.',
 			}
 		}
 	},

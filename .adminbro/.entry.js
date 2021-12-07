@@ -47,3 +47,7 @@ import Component23 from '../server/models/components/text-reqs'
 AdminBro.UserComponents.Component23 = Component23
 import Component24 from '../server/models/components/text-reqs'
 AdminBro.UserComponents.Component24 = Component24
+import Component25 from '../server/models/components/upload-file.edit'
+AdminBro.UserComponents.Component25 = Component25
+import Component26 from '../server/models/components/upload-file.list'
+AdminBro.UserComponents.Component26 = Component26
