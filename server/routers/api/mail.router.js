@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 				{
 					"From": {
 						"Email": 'drakon.band@yandex.ru',
-						"Name": name
+						"Name": 'drakon.band'
 					},
 					"To": [
 						{
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 						}
 					],
 					"Subject": "Feedback",
-					"HTMLPart": `<h2>Подписка:</h2></h2><h3>E-Mail: ${email}</h3>`,
+					"HTMLPart": `<h2>Новая подписка:</h2></h2><h3>E-Mail: ${email}</h3>`,
 				}
 			]
 		})

@@ -5,6 +5,11 @@ const ContactsSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	phoneIsVisible: {
+		type: Boolean,
+		required: true,
+		default: false,
+	},
 	email: {
 		type: String,
 		required: true
