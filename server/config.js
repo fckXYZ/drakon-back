@@ -3,9 +3,9 @@ const {
   NODE_ENV,
   JWT_SECRET,
   MONGO_DB_ADDRESS,
+  MONGO_DB_ADDRESS_DEV,
 } = process.env;
 const rateLimit = require('express-rate-limit');
-const path = require("path");
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -13,9 +13,8 @@ const limiter = rateLimit({
 });
 
 module.exports = {
-  BASEDIR: path.join(__dirname + '/uploads'),
   PORT,
   JWT_SECRET: NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
-  MONGO_DB_ADDRESS: NODE_ENV === 'production' ? MONGO_DB_ADDRESS : 'mongodb+srv://fckxyz:tkolo4hd@test.dyfrr.mongodb.net/drakon-db?retryWrites=true&w=majority',
+  MONGO_DB_ADDRESS: NODE_ENV === 'production' ? MONGO_DB_ADDRESS : MONGO_DB_ADDRESS_DEV,
   limiter,
 };

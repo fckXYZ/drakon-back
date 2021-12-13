@@ -41,16 +41,6 @@ app
   .use('/api/settings', settingsRouter)
   .use('/api/discography', discographyMainPageRouter)
 
-// Handle production
-
-// if (process.env.NODE_ENV === 'production'){
-//   Static folder
-  // app.use(express.static(__dirname + '/public'))
-  //
-  // Handle SPA
-  // app.get(/^(?!.*(admin|uploads))/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
-// }
-
 const run = async () => {
   try{
     await mongoose.connect(config.MONGO_DB_ADDRESS, {
