@@ -37,7 +37,6 @@ const after = async (response, request, context) => {
 		if (tracksToDelete) {
 			// if there are tracks to delete from adminbro/upload
 			// need to sync tracksForFront array in record with tracks array
-			console.log('here')
 			const { tracksForFront } = albumToModify[0];
 			tracksToDelete.map((index) => {
 				tracksForFront.splice(index, 1);

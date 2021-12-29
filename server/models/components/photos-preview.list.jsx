@@ -8,7 +8,6 @@ const PhotosPreview = (props) => {
 
 	const photosUrls = [];
 	const propName = property.custom.propName;
-	console.log(record.params)
 	Object.keys(record.params).map((key) => {
 		if (key.includes(`${propName}.key`)) {
 			photosUrls.push('/uploads/' + record.params[key])

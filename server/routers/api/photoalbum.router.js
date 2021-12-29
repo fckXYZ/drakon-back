@@ -10,11 +10,7 @@ router.get('/', async (req, res) => {
 			if (!data.length) {
 				return res.status(404).send({ message: 'No albums yet!' })
 			}
-			const photos = [];
-			data[0].photos.key.map((file) => {
-				photos.push(`/uploads/${file}`)
-			})
-			res.send(photos)
+			res.send(data[0].photosForFront ? data[0].photosForFront : [])
 		})
 
 })

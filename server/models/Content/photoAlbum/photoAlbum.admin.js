@@ -7,6 +7,11 @@ const validation = {
   mimeTypes: ['image/jpeg', 'image/png'],
 }
 
+const {
+  after: uploadAfterHook,
+} = require('../../actions/upload-photos.hook')
+
+
 const options = {
   parent: {
     name: 'Content',
@@ -55,6 +60,14 @@ const options = {
       }
     },
   },
+  actions: {
+    new: {
+      after: uploadAfterHook,
+    },
+    edit: {
+      after: uploadAfterHook,
+    },
+  }
 };
 
 module.exports = {
